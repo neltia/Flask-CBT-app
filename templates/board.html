@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .jumbotron {
+        background-color: #343a40;
+        color: #fff;
+    }
+</style>
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="text-center">게시판</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <button type="button" class="btn btn-primary">전체글</button>
+            <button type="button" class="btn btn-outline-info">개념글</button>
+            <button type="button" class="btn btn-outline-dark">공지</button>
+            <table class="table table-sm table-responsive-md table-hover text-center mt-3">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                        <th>추천</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>뤼즌이 진짜 승민이 블로그야?</td>
+                        <td>진서</td>
+                        <td>2017.06.03</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-primary">전체글</button>
+            <button type="button" class="btn btn-outline-info">개념글</button>
+            <button type="button" class="btn btn-outline-dark float-right">글쓰기</button>
+        </div>
+    </main>
+{% endblock %}
