@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand mb-0" href="{{ url_for('page.page_main') }}">
+            <img src="/static/images/favicon.png" height="30" /><strong> CBTtalk</strong>
+        </a>
+
+        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse font-weight-bold" id="myNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/set">문제풀기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/note">핵심노트</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('board.board_main') }}">게시판</a>
+                </li>
+            </ul>
+            <hr class="d-sm-flex d-md-flex d-lg-none" color="gray">
+            <ul class="nav navbar-nav ml-auto">
+                {% if session['logged_in'] %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">
+                        <i class="oi oi-book"></i> 내 정보
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">
+                        <i class="oi oi-account-logout"></i> 로그아웃
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('member.member_login') }}">
+                        <i class="oi oi-account-login"></i> 회원가입
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('member.member_login') }}">
+                        <i class="oi oi-person"></i> 로그인
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

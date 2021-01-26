@@ -1,0 +1,9 @@
+## Neltia Ingnore File ##
+
+# cache
+__pycache__/
+
+# private file
+main/static/favicon.ico
+main/static/favicon.png
+main/static/templates/back/*

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main">
+    <div class="container">
+        {% include "nav.html" %}
+        <br>
+        <div class="row">
+            <div class="col-xl-4">
+                <a href="/write" class="float-right">
+                    <button type="button" class="btn btn-outline-secondary btn-sm">
+                        글쓰기
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="row pt-2">
+            <table class="table table-sm table-borered" style="table-layout:fixed">
+                <thead class="table-warning text-center">
+                    <tr>
+                        <th>#</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>일자</th>
+                    </tr>
+                </thead>
+
+                <tbody class="table-hover text-center">
+                    <tr>
+                        <td></td>
+                        <td class="text-left" width="150" height="30" style="text-overflow:ellipsis; overflow:hidden; white-space: nowrap;">                        <a class="text-reset"></a>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
