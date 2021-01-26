@@ -6,4 +6,4 @@ __pycache__/
 # private file
 main/static/favicon.ico
 main/static/favicon.png
-main/static/templates/back/*
+main/static/templates/back/
