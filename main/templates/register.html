@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main">
+    <div class="container">
+        {% include "nav.html" %}
+        <section class="px-md-5 mt-5 mx-md-5 text-center text-lg-left dark-grey-text">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-md-6">
+
+                <!-- Default form login -->
+                <form class="text-center" action="" method="POST" autocomplete="off">
+                  <p class="h4 mb-4">Log on</p>
+                  <!-- Email -->
+                  <input type="email" id="Email" name="email" class="form-control valid mb-4" placeholder="이메일">
+                  <!-- Password -->
+                  <input type="password" id="Password" name="pass1" class="form-control mb-4" placeholder="비밀번호">
+                  <input type="password" id="requirePass" name="pass2" class="form-control mb-4" placeholder="비밀번호 재확인">
+                  <!-- Sign in button -->
+                  <button class="btn btn-info btn-block my-4" type="submit">회원가입</button>
+                </form>
+                <!-- Default form login -->
+
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </section>
+    </div>
+</div>
+{% endblock %}

@@ -25,17 +25,17 @@
                 {% if session['logged_in'] %}
                 <li class="nav-item">
                     <a class="nav-link" href="/index">
-                        <i class="oi oi-book"></i> 내 정보
+                        <i class="fas fa-user-alt"></i> 내 정보
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/index">
-                        <i class="oi oi-account-logout"></i> 로그아웃
+                    <a class="nav-link" href="{{ url_for('member.member_logout') }}">
+                        <i class="fas fa-door-closed"></i> 로그아웃
                     </a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('member.member_login') }}">
+                    <a class="nav-link" href="{{ url_for('member.member_new') }}">
                         <i class="oi oi-account-login"></i> 회원가입
                     </a>
                 </li>

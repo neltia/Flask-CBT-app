@@ -4,16 +4,14 @@
     <div class="container">
         {% include "nav.html" %}
         <br>
-        <div class="row">
-            <div class="col-xl-4">
-                <a href="/write" class="float-right">
-                    <button type="button" class="btn btn-outline-secondary btn-sm">
-                        글쓰기
-                    </button>
-                </a>
-            </div>
+        <div class="float-right">
+            <a href="/write" class="float-right">
+                <button type="button" id="writeBtn" name="writeBtn" class="btn btn-outline-secondary btn-sm">
+                    글쓰기
+                </button>
+            </a>
         </div>
-
+        <br><br>
         <div class="row pt-2">
             <table class="table table-sm table-borered" style="table-layout:fixed">
                 <thead class="table-warning text-center">
