@@ -60,7 +60,7 @@ def member_new():
         wt_members = mongo.db.wt_members
         post = {
             "email": email,
-            "pass": pass1,
+            "pass": hashlib.sha512(pass1.encode()).hexdigest(),
             "registerdate": cur_utc_time
         }
         wt_members.insert_one(post)
