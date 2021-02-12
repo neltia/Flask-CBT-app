@@ -4,15 +4,21 @@
     <div class="container">
         {% include "nav.html" %}
         <br>
-        <div class="float-right">
-            <a href="/write" class="float-right">
-                <button type="button" id="writeBtn" name="writeBtn" class="btn btn-outline-secondary btn-sm">
-                    글쓰기
-                </button>
-            </a>
+        <div class="row justify-content-center">
+            <form class="form-inline md-form">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn aqua-gradient btn-sm" type="submit">Search</button>
+
+                {% if session['logged_in'] %}
+                <a href="{{url_for('board.board_write')}}">
+                    <button type="button" class="btn btn-outline-dark btn-sm rounded-pill">
+                        <i class="fas fa-pen fa-2x"></i>
+                    </button>
+                </a>
+                {% endif %}
+            </form>
         </div>
-        <br><br>
-        <div class="row pt-2">
+        <div class="row mt-2">
             <table class="table table-sm table-borered" style="table-layout:fixed">
                 <thead class="table-warning text-center">
                     <tr>

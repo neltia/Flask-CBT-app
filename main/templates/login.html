@@ -4,37 +4,61 @@
 		<div class="container">
 			{% include "nav.html" %}
 			{% if not session['logged_in'] %}
-			<section class="px-md-5 mt-5 mx-md-5 text-center text-lg-left dark-grey-text">
 				<!--Grid row-->
 				<div class="row d-flex justify-content-center">
 				  <!--Grid column-->
 				  <div class="col-md-6">
-
-					<!-- Default form login -->
-					<form class="text-center" action="" method="POST" autocomplete="off">
-					  <p class="h4 mb-4">Log in</p>
-					  <!-- Email -->
-					  <input type="email" id="Email" name="email" class="form-control valid mb-4" placeholder="이메일">
-					  <!-- Password -->
-					  <input type="password" id="Password" name="pass" class="form-control mb-4" placeholder="비밀번호">
-					  <div class="d-flex justify-content-around">
-						<!-- Forgot password -->
-						<a href="">Forgot password?</a>
+					{% if msg %}
+					<div class="alert alert-danger mt-2" role="alert">
+						<i class="fa fa-exclamation-triangle"></i>
+						&ensp;{{ msg }}
+					</div>
+					{% else %}
+					<div class="alert alert-light mt-2" role="alert">
+						<i class="fas fa-address-card"></i>
+						&ensp;Let's Sign In!
+					</div>
+					{% endif %}
+					<div class="card mt-3">
+						<!-- Card header -->
+						<div class="card-header alert-warning">
+						  <p class="h4 text-center py-4">Sign in</p>
+						</div>
+			  
+						<!-- Card body -->
+						<div class="card-body">
+							<!-- Material form register -->
+							<form action="" method="POST">
+								<!-- Material input email -->
+								<div class="md-form">
+								<i class="fa fa-envelope prefix grey-text"></i>
+								<input type="email" id="materialFormCardEmailEx" name="email" class="form-control">
+								<label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
+								</div>
+					  
+								<!-- Material input password -->
+								<div class="md-form">
+								<i class="fa fa-lock prefix grey-text"></i>
+								<input type="password" id="materialFormCardPasswordEx" name="pass" class="form-control">
+								<label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
+								</div>
+			  
+								<div class="text-center py-4 mt-3">
+								<button class="btn btn-cyan" type="submit">로그인</button>
+								</div>
+								<p class="text-center">Not a member?
+									<a href="{{ url_for('member.member_new') }}">Register</a>
+								</p>
+							</form>
+						  <!-- Material form register -->
+						</div>
+						<!-- Card body -->
 					  </div>
-					  <!-- Sign in button -->
-					  <button class="btn btn-info btn-block my-4" type="submit">로그인</button>
-					  <!-- Register -->
-					  <p>Not a member?
-						<a href="{{ url_for('member.member_new') }}">Register</a>
-					  </p>
-					</form>
-					<!-- Default form login -->
-
+					  <!-- Card -->
 				  </div>
 				  <!--Grid column-->
 				</div>
 				<!--Grid row-->
-			</section>
 			{% endif %}
 		</div>
 	</div>

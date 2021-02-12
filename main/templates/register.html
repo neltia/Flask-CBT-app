@@ -1,32 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="main">
-    <div class="container">
-        {% include "nav.html" %}
-        <section class="px-md-5 mt-5 mx-md-5 text-center text-lg-left dark-grey-text">
-            <!--Grid row-->
-            <div class="row d-flex justify-content-center">
-              <!--Grid column-->
-              <div class="col-md-6">
+  <div class="container">
+    {% include "nav.html" %}
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center">
+      <!--Grid column-->
+      <div class="col-md-6">
+        {% if msg %}
+        <div class="alert alert-danger mt-2" role="alert">
+          <i class="fas fa-sign-in-alt"></i>
+          &ensp;{{ msg }}
+        </div>
+        {% else %}
+        <div class="alert alert-light mt-2" role="alert">
+          <i class="fas fa-address-card"></i>
+          &ensp;Let's Sign up!
+        </div>
+        {% endif %}
+        
+        <div class="card mt-3">
+          <!-- Card header -->
+          <div class="card-header alert-warning">
+            <p class="h4 text-center py-4">Sign up</p>
+          </div>
 
-                <!-- Default form login -->
-                <form class="text-center" action="" method="POST" autocomplete="off">
-                  <p class="h4 mb-4">Log on</p>
-                  <!-- Email -->
-                  <input type="email" id="Email" name="email" class="form-control valid mb-4" placeholder="이메일">
-                  <!-- Password -->
-                  <input type="password" id="Password" name="pass1" class="form-control mb-4" placeholder="비밀번호">
-                  <input type="password" id="requirePass" name="pass2" class="form-control mb-4" placeholder="비밀번호 재확인">
-                  <!-- Sign in button -->
-                  <button class="btn btn-info btn-block my-4" type="submit">회원가입</button>
-                </form>
-                <!-- Default form login -->
-
+          <!-- Card body -->
+          <div class="card-body">
+            <!-- Material form register -->
+            <form action="" method="POST">
+              <!-- Material input email -->
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="email" id="materialFormCardEmailEx" name="email" class="form-control">
+                <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
               </div>
-              <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </section>
+        
+              <!-- Material input password -->
+              <div class="md-form">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" id="materialFormCardPasswordEx" name="pass1" class="form-control">
+                <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
+              </div>
+        
+              <!-- Material input password -->
+              <div class="md-form">
+                <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+                <input type="password" id="materialFormCardPasswordEx" name="pass2" class="form-control">
+                <label for="materialFormCardPasswordEx" class="font-weight-light">Confirm your password</label>
+              </div>
+
+              <div class="text-center py-4 mt-3">
+                <button class="btn btn-cyan" type="submit">회원가입</button>
+              </div>
+            </form>
+            <!-- Material form register -->
+          </div>
+          <!-- Card body -->
+        </div>
+        <!-- Card -->
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
